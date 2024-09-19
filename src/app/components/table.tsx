@@ -1,47 +1,3 @@
-// "use client";
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import { useSelectors } from "../hook";
-
-// function Table() {
-//   const { data, error, loading } = useSelectors();
-//   console.log(data);
-//   return (
-//     <>
-//       <div>{loading && <p>Loading.....</p>}</div>
-//       <div>{error && <p>{error}</p>}</div>
-//       {!loading && (
-//         <table className="w-full  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-//           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-//             <tr>
-//               <th scope="col" className="px-6 py-3">
-//                 ID
-//               </th>
-//               <th scope="col" className="px-6 py-3">
-//                 FUNCTION NAME
-//               </th>
-//               <th scope="col" className="px-6 py-3">
-//                 BYTES SIGNATURE
-//               </th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {data.map((item, key) => (
-//               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-//                 <td className="px-6 py-4">{item?.id}</td>
-//                 <td className="px-6 py-4">{item?.function_name}</td>
-//                 <td className="px-6 py-4">{item?.selector}</td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       )}
-//     </>
-//   );
-// }
-
-// export default Table;
-
 "use client";
 import React, { useEffect, useState } from "react";
 import { useSelectors } from "../hook";
@@ -50,7 +6,6 @@ function Table() {
   const { data, error, loading } = useSelectors();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 5; // Adjust this to the number of items you want per page
-
   // Calculate total pages
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
@@ -65,9 +20,7 @@ function Table() {
 
   return (
     <>
-      <div>{loading && <p>Loading.....</p>}</div>
-      <div>{error && <p>{error}</p>}</div>
-      {!loading && (
+      {loading? <p>Loading.....</p> : (
         <>
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
