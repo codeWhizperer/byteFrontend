@@ -83,7 +83,7 @@ function Submit() {
     setLoading(true);
     setError(""); // Reset error state on new submission
     try {
-      const response = await axios.post("http://127.0.0.1:8080/submit", {
+      const response = await axios.post("https://bytedirectory.onrender.com/submit", {
         function_name: selector,
       });
 

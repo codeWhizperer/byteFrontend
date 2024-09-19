@@ -9,7 +9,7 @@ export const useSelectors = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8080/selectors");
+      const response = await axios.get("https://bytedirectory.onrender.com/selectors");
       if (!response.status) {
         throw new Error("Failed to fetch data");
       }
