@@ -18,7 +18,7 @@ function Nav() {
   return (
     <header className="flex space-x-4 bg-slate-100 p-2">
       <div>
-        <p>BYTEDIRECTORY</p>
+        <p className="font-bold font-[800]">BYTEDIRECTORY</p>
       </div>
       <nav>
         <ul className="flex justify-between space-x-12 ">
