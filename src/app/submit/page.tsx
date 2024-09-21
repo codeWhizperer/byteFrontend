@@ -76,12 +76,12 @@ function Submit() {
 
   const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSelector(event.target.value);
-    setError(""); // Clear error when input changes
+    setError(""); 
   };
 
   const submitSelector = async () => {
     setLoading(true);
-    setError(""); // Reset error state on new submission
+    setError(""); 
     try {
       const response = await axios.post("https://bytedirectory.onrender.com/submit", {
         function_name: selector,
@@ -95,9 +95,9 @@ function Submit() {
       }
     } catch (error: any) {
       console.error("Error response:", error.response);
-      setError(error.response?.data?.message || "An error occurred."); // Set error message from response or a default message
+      setError(error.response?.data?.message || "An error occurred."); 
     } finally {
-      setLoading(false); // Ensure loading state is reset
+      setLoading(false); 
     }
   };
 

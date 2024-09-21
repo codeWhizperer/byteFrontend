@@ -12,7 +12,7 @@ function Nav() {
     },
     {
       name: "Search Selector",
-      page: "#",
+      page: "/search",
     },
   ];
   return (
